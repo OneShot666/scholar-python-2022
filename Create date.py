@@ -5,7 +5,7 @@ from datetime import *
 # from pprint import pprint
 
 
-def create_date():
+def create_date():                                                              # Create a random date : not perfect
     day = str(randint(1, 31))
     if len(day) < 2:
         day = "0" + day
@@ -17,7 +17,7 @@ def create_date():
     return f"{day}/{month}/{year}"
 
 
-def get_date_infos(date_format_jj_mm_aaaa=None, date_format_aaaa_mm_jj=None):
+def get_date_infos(date_format_jj_mm_aaaa=None, date_format_aaaa_mm_jj=None):   # return infos based on date format
     if date_format_jj_mm_aaaa:
         day = str(date_format_jj_mm_aaaa)[0:2]
         month = str(date_format_jj_mm_aaaa)[3:5]
@@ -35,7 +35,7 @@ def get_date_infos(date_format_jj_mm_aaaa=None, date_format_aaaa_mm_jj=None):
     return day, month, year
 
 
-def is_futur(date_tested, date_referenced):
+def is_futur(date_tested, date_referenced):                                     # Check the earlier date
     jour_t, mois_t, annee_t = get_date_infos(date_tested)
     jour_ref, mois_ref, annee_ref = get_date_infos(date_referenced)
 
@@ -58,8 +58,8 @@ def is_futur(date_tested, date_referenced):
 
 
 def get_dates_infos_futures(set_date_t=False, set_date_ref=False):
-    date_t = input("Date testée : (dd/mm/aaaa)").replace(" ", "") if set_date_t else create_date()
-    date_ref = input("Date de référence : (dd/mm/aaaa)").replace(" ", "") if set_date_ref else create_date()
+    date_t = input("Date testée : (dd/mm/aaaa) ").replace(" ", "") if set_date_t else create_date()
+    date_ref = input("Date de référence : (dd/mm/aaaa) ").replace(" ", "") if set_date_ref else create_date()
     print(f"Date testée : {date_t}")
     print(f"Date de référence : {date_ref}")
     if is_futur(date_t, date_ref) > 0:

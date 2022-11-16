@@ -3,22 +3,22 @@ from random import *
 # from time import *
 
 
-def get_hypothenuse(cote1, cote2):
+def get_hypothenuse(cote1, cote2):                                              # Get the hypothenuse of a triangle
     return sqrt(cote1 ** 2 + cote2 ** 2)
 
 
-def fonction_perso(nb):
+def fonction_perso(nb):                                                         # Random 2nd degree function
     return nb ** 2 + nb * 3 + 2
 
 
-def get_average(notes):
+def get_average(notes):                                                         # Get the average of several numbers
     somme = 0
     for note in notes:
         somme += note
     return somme / len(notes)
 
 
-def get_ppcm(*args):
+def get_ppcm(*args):                                                            # Get smaller coefficient ?
     print(f"Arguments entrés : {args}")
     L = list(args)
     if len(L) == 2:
